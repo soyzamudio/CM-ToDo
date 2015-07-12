@@ -1,0 +1,16 @@
+doctype html
+html(ng-app='TodoApp')
+  head
+    title ToDo App
+    link(rel='stylesheet', href='css/main.css')
+  body(ng-controller='TodoAppController')
+    div {{test}}
+    input.input-form(type='text', placeholder='Add a task', ng-model='newTask')
+    button.btn(type='submit', ng-click='addTask(newTask)') Submit
+    .error-message(ng-if='error') PLEASE ENTER A TASK!
+    ul
+      li(ng-repeat='task in tasksToDo track by $index') {{task}}
+      
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js')
+    script(src='js/main.js')
+    
